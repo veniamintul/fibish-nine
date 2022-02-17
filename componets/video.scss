@@ -20,11 +20,11 @@
   //}
 
   .player {
-    width: 660px;
-    height: 400px;
-    //position: absolute;
+    width: 100%;
+    height: 100%;
+    position: relative;
     //bottom: -100px;
-    left: 20%;
+    display: block;
   }
 
   .player__splash{
@@ -40,22 +40,6 @@
   }
   
 
-
-//стилизовать кнопку
-  .button__one{
-    position: relative;
-    top: -230px;
-    left: 42%;
-    border: rem(40px) solid transparent;
-    border-top: rem(40px) solid red;
-    border-bottom-width: 0;
-    height: rem(0px);
-    width: rem(0px);
-    content: "";
-    //margin-left: rem(10px);
-    transform: rotate(270deg);
-    z-index: 100;
-  }
 
   
 
@@ -77,25 +61,71 @@
 }
 
 
-.player.paused .player__start {
-  width: 12px;
-  height: 17px;
-  border: none;
-  background: url(../../img/start.svg);
-  &:before {
-      background: url(../../img/scale.svg);
-      width: 444px;
-      height: 4px;
-      left: 51px;
-      top: 15px;
-  }
+//.player .player__start {
+//  width: 12px;
+//  height: 17px;
+//  border: none;
+//  background: url(../../img/start.svg);
+//  &:before {
+//      background: url(../../img/scale.svg);
+// /    width: 444px;
+//      height: 4px;
+//      left: 51px;
+//      top: 15px;
+//  }
   
-  &:after{
-      right: 600px;
-      top: 11px;
-      background: url(../../img/slider.svg);
-      width: 13px;
-      height: 13px;
-  }
+//  &:after{
+//      right: 600px;
+//      top: 11px;
+//      background: url(../../img/slider.svg);
+//      width: 13px;
+//      height: 13px;
+//  }
 
+//}
+
+
+
+//стилизовать кнопку
+.player__start{
+  position: relative;
+  left: 0;
+  border: rem(6px) solid transparent;
+  border-top: rem(6px) solid #fff;
+  border-bottom-width: 0;
+  height: rem(0px);
+  width: rem(0px);
+  //content: "";
+  //margin-left: rem(10px);
+  transform: rotate(270deg);
+  z-index: 100;
+}
+
+
+
+.player__playback{
+  height: 3px;
+  width: 446px;
+  position: relative;
+  content: "";
+  background: #F5F5F5;
+}
+
+
+
+.player__playback-button{
+  width: 12px;
+  height: 12px;
+  border-radius:50% ;
+  background: red;
+  content: "";
+  padding: 0;
+  position: absolute;
+  top:-4px;
+  //transform: rotate(-50%, -50%);
+  left:0;                 //в джава скрипте меняем процентовку чтобы ползунок полз
+}
+
+.player__duration-completed,.player__duration-estimate{
+  background: #F5F5F5;
 }
